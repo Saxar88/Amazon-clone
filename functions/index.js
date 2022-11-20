@@ -7,27 +7,22 @@ const stripe = require("stripe")(
 
 const app = express();
 
-app.use(cors());
+app.use(cors({origin: true}));
 app.use(express.json());
 
 app.get("/", (request, response) => response.status(200).send("it works!"));
-app.post("/pay/create", payment);
 
-function payment(request, response) {
-	try {
-		const total = request.query.total;
+app.post("/pay/create", async (request, response) => {
+	const total = request.query.total;
 
-		console.log("Payment request received!", total);
+	const paymentIntent = await stripe.paymentIntents.create({
+		amount: total,
+		currency: "eur",
+	});
 
-		const paymentIntent = stripe.paymentIntents.create({
-			amount: total,
-			currency: "eur",
-		});
-
-		response.status(201).send({clientSecret: paymentIntent.client_secret});
-	} catch (err) {
-		console.log(err);
-	}
-}
+	response.status(201).send({
+		clientSecret: paymentIntent.client_secret,
+	});
+});
 
 exports.api = functions.https.onRequest(app);

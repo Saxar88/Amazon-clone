@@ -1,11 +1,6 @@
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "firebase/firestore";
-import {
-	getAuth,
-	setPersistence,
-	signInWithEmailAndPassword,
-	browserSessionPersistence,
-} from "firebase/auth";
+import {getAuth} from "firebase/auth";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCn2b8XUn6hQvVTyyiziSeTJRjd0RUw4SM",

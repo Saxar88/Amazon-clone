@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import Pay from "./pages/Pay";
+import OrderHistory from "./pages/OrderHistory";
 import {useStateValue} from "./hooks/StateProvider";
 
 const stripePromise = loadStripe(
@@ -34,6 +35,16 @@ function App() {
 		<Router>
 			<div className="app">
 				<Routes>
+					<Route
+						path="/order-history"
+						element={
+							<>
+								<Header />
+								<OrderHistory />
+								<Footer />
+							</>
+						}
+					/>
 					<Route
 						path="/pay"
 						element={

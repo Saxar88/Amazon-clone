@@ -56,8 +56,8 @@
 
 .pay--steps {
 	width: 100%;
-	display: flex;
-	justify-content: flex-start;
+	display: grid;
+	grid-template-columns: [first] 10px [line2] 150px [line3] auto [line4] 50px [end];
 	gap: 2rem;
 	padding: 15px 5px 5px 0;
 	border-top: 1px solid #e7e7e7;
@@ -68,7 +68,6 @@
 }
 
 .pay--steps > h3 {
-	flex: 0.6;
 	margin-left: 0;
 	white-space: nowrap;
 }
@@ -80,12 +79,10 @@
 }
 
 .pay--steps > form {
-	width: 55%;
 	font-size: 14px;
 }
 
 .pay--stepsChange {
-	flex: 0.2;
 	text-align: right;
 }
 
@@ -98,6 +95,10 @@
 .pay--steps > a:hover {
 	color: #c7511f;
 	text-decoration: underline;
+}
+
+.pay--stepsProducts {
+	width: 100%;
 }
 
 .pay--total {

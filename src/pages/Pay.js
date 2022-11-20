@@ -3,12 +3,14 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLock} from "@fortawesome/free-solid-svg-icons";
 import {Link, useNavigate} from "react-router-dom";
 import {CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
+import {doc, setDoc} from "firebase/firestore";
 import "./Pay.css";
 import {useStateValue} from "../hooks/StateProvider";
 import CheckoutProduct from "../components/CheckoutProduct";
 import CurrencyFormat from "react-currency-format";
 import {getBasketTotal} from "../hooks/reducer";
 import axios from "../hooks/axios";
+import {db} from "../hooks/firebase";
 
 function Pay() {
 	const [{basket, user}, dispatch] = useStateValue();
@@ -27,7 +29,7 @@ function Pay() {
 	useEffect(() => {
 		const getClientSecret = async () => {
 			const response = await axios({
-				method: "POST",
+				method: "post",
 				url: `/pay/create?total=${getBasketTotal(basket) * 100}`,
 			});
 
@@ -41,20 +43,26 @@ function Pay() {
 		event.preventDefault();
 		setProcessing(true);
 
-console.log("Got here")
-
 		const payload = await stripe
 			.confirmCardPayment(clientSecret, {
 				payment_method: {card: elements.getElement(CardElement)},
 			})
 			.then(({paymentIntent}) => {
+				setDoc(doc(db, "users", user.uid), {
+					basket: basket,
+					amount: paymentIntent.amount,
+					created: paymentIntent.created,
+				});
+
 				setSucceeded(true);
 				setError(null);
 				setProcessing(false);
 
-console.log(succeeded)
+				dispatch({
+					type: "EMPTY_BASKET",
+				});
 
-				navigate("/orders", {replace: true});
+				navigate("/order-history", {replace: true});
 			});
 	};
 
@@ -94,7 +102,7 @@ console.log(succeeded)
 					<div className="pay--steps">
 						<h3 className="pay--stepsNumber">2</h3>
 						<h3>Payment method</h3>
-						<form onSubmit={handleSubmit}>
+						<form id="cardInfo" onSubmit={handleSubmit}>
 							<CardElement onChange={handleChange} />
 						</form>
 						<a href="" className="pay--stepsChange">
@@ -102,7 +110,7 @@ console.log(succeeded)
 						</a>
 					</div>
 					<div className="pay--steps">
-						<h3 className="pay--stepsNumber">3 </h3>
+						<h3 className="pay--stepsNumber">3</h3>
 						<h3>Offers</h3>
 					</div>
 					<div className="pay--steps">
@@ -124,6 +132,8 @@ console.log(succeeded)
 					<div className="pay--total">
 						<div>
 							<button
+								type="submit"
+								form="cardInfo"
 								disabled={processing || disabled || succeeded}
 								className="pay--totalButton">
 								<span>{processing ? <p>Processing...</p> : "Pay in EUR"}</span>
@@ -203,7 +213,10 @@ console.log(succeeded)
 				</div>
 				<div className="pay--rightMenu">
 					<div className="pay--buttonInfo">
-						<button disabled={processing || disabled || succeeded}>
+						<button
+							type="submit"
+							form="cardInfo"
+							disabled={processing || disabled || succeeded}>
 							<span>{processing ? <p>Processing...</p> : "Pay in EUR"}</span>
 						</button>
 						{error && <div>{error}</div>}
