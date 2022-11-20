@@ -1,0 +1,130 @@
+.checkoutProduct {
+	color: #0f1111;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+	padding: 12px 0 12px 12px;
+	border-bottom: 1px solid #ddd;
+}
+
+.checkoutProduct--checkbox {
+	height: 16px;
+	width: 16px;
+	margin-right: 8px;
+}
+
+.checkoutProduct--info {
+	padding-left: 20px;
+	margin-bottom: auto;
+}
+
+.checkoutProduct--img {
+	object-fit: cover;
+	height: 180px;
+	width: 180px;
+	margin-left: 30px;
+}
+
+.checkoutProduct--title {
+	font-size: 18px;
+}
+
+.checkoutProduct--gift {
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+}
+
+.checkoutProduct--menu {
+	display: flex;
+	align-items: center;
+	margin: 5px 0 3px;
+}
+
+.checkoutProduct--checkbox {
+	padding: 0 26px 0 11px;
+}
+
+.checkoutProduct--checkboxText {
+	padding-left: 5px;
+}
+
+.checkoutProduct--checkboxText > a {
+	color: #007185;
+}
+
+.checkoutProduct--learnMore {
+	color: #007185;
+	text-decoration: none;
+}
+
+.checkoutProduct--learnMore:hover {
+	color: #d2511f;
+	text-decoration: underline;
+}
+
+.checkoutProduct--menuDropdown {
+	position: relative;
+}
+
+.checkoutProduct--menuDropdown > button {
+	display: inline-block;
+	background-color: #f0f2f2;
+	border: 1px solid #d1d5d5;
+	border-radius: 5px;
+}
+
+.checkoutProduct--menuList {
+	position: absolute;
+	list-style-type: none;
+	width: 70px;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #d1d5d5;
+}
+
+.checkoutProduct--menuList > li {
+	font: inherit;
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	color: inherit;
+	padding: 5px;
+	margin: 0;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.tenPlus {
+	border-top: 1px solid #d5d9d9;
+}
+
+.checkoutProduct--menuList > li:hover {
+	background-color: #f0f2f2;
+	border: 1px solid #d5d9d9;
+	margin: -1px;
+}
+
+.textSeparator {
+	color: #ddd;
+	margin: 0 10px;
+}
+
+.checkoutProduct--menuOption {
+	color: #007185;
+	font-size: 12px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.checkoutProduct--menuOption:hover {
+	text-decoration: underline;
+}
+
+.chekcoutProduct--price {
+	font-size: 18px;
+	margin: 0 20px auto auto;
+}
