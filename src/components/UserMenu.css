@@ -1,0 +1,102 @@
+.userMenu--container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.userMenu--signIn {
+	color: #575757;
+	font-size: 0.7rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	margin: 0 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.userMenu--signInButton {
+	font-size: 1rem;
+	background-image: linear-gradient(to bottom, #faecc8, 10%, #f0c24d);
+	height: 30px;
+	width: 200px;
+	padding: 1px 6px;
+	border: solid 1px #846a29;
+	border-radius: 3px;
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+.userMenu--signIn > p > a {
+	color: #1764b2;
+	text-decoration: none;
+}
+
+.signedOut--option > p > a:hover {
+	color: #d2511f;
+	text-decoration: underline;
+}
+
+.userMenu--content {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	margin: 10px 0 0 -245px;
+	padding: 0 10px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #bbb;
+}
+
+.userMenu--columns {
+	display: flex;
+}
+
+.userMenu--menuColumn {
+	display: flex;
+	flex-direction: column;
+	width: 195px;
+	background-color: #fff;
+	padding: 20px;
+}
+
+.title {
+	color: #0f1111;
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 0 0 10px;
+}
+
+.userMenu--menuColumn > a {
+	color: #444;
+	font-size: 0.875rem;
+	text-decoration: none;
+	margin-bottom: 5px;
+}
+
+.userMenu--menuColumn > a:hover {
+	color: #e47911;
+	text-decoration: underline;
+}
+
+.userMenu--signOut {
+	display: flex;
+	flex-direction: column;
+}
+
+.userMenu--signOut > a {
+	color: #444;
+	font-size: 0.875rem;
+	text-decoration: none;
+	margin-bottom: 5px;
+}
+
+.userMenu--signOut > a:hover {
+	color: #e47911;
+	text-decoration: underline;
+}
+
+.listBorder {
+	border-right: 1px solid #eee;
+	margin: 20px 0;
+}

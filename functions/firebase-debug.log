@@ -1,0 +1,106 @@
+[debug] [2022-11-21T09:21:01.085Z] ----------------------------------------------------------------------
+[debug] [2022-11-21T09:21:01.087Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\W10\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-11-21T09:21:01.087Z] CLI Version:   11.16.1
+[debug] [2022-11-21T09:21:01.087Z] Platform:      win32
+[debug] [2022-11-21T09:21:01.088Z] Node Version:  v16.15.1
+[debug] [2022-11-21T09:21:01.088Z] Time:          Mon Nov 21 2022 11:21:01 GMT+0200 (Eastern European Standard Time)
+[debug] [2022-11-21T09:21:01.089Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-21T09:21:01.154Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-21T09:21:01.155Z] > authorizing via signed-in user (v.sasaran88@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2022-11-21T09:21:01.166Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-11-21T09:21:01.166Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-11-21T09:21:01.167Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project clone-fd68b. This may result in unexpected behavior. 
+[debug] [2022-11-21T09:21:01.172Z] [hub] writing locator at C:\Users\W10\AppData\Local\Temp\hub-clone-fd68b.json
+[debug] [2022-11-21T09:21:01.193Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-11-21T09:21:01.193Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-11-21T09:21:01.193Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-11-21T09:21:01.211Z] defaultcredentials: writing to file C:\Users\W10\AppData\Roaming\firebase\v_sasaran88_gmail.com_application_default_credentials.json
+[debug] [2022-11-21T09:21:01.213Z] Setting GAC to C:\Users\W10\AppData\Roaming\firebase\v_sasaran88_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\W10\\AppData\\Roaming\\firebase\\v_sasaran88_gmail.com_application_default_credentials.json"}}
+[debug] [2022-11-21T09:21:01.215Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b/adminSdkConfig [none]
+[debug] [2022-11-21T09:21:01.527Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b/adminSdkConfig 200
+[debug] [2022-11-21T09:21:01.527Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b/adminSdkConfig {"projectId":"clone-fd68b","storageBucket":"clone-fd68b.appspot.com"}
+[debug] [2022-11-21T09:21:01.537Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-fd68b/sites 
+[debug] [2022-11-21T09:21:02.618Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-fd68b/sites 200
+[debug] [2022-11-21T09:21:02.618Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-fd68b/sites {"sites":[{"name":"projects/clone-fd68b/sites/clone-fd68b","defaultUrl":"https://clone-fd68b.web.app","appId":"1:442990054938:web:4e7eae26d990bebb950ba3","type":"DEFAULT_SITE"}]}
+[debug] [2022-11-21T09:21:02.618Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b/webApps/1:442990054938:web:4e7eae26d990bebb950ba3/config [none]
+[debug] [2022-11-21T09:21:03.550Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b/webApps/1:442990054938:web:4e7eae26d990bebb950ba3/config 200
+[debug] [2022-11-21T09:21:03.550Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b/webApps/1:442990054938:web:4e7eae26d990bebb950ba3/config {"projectId":"clone-fd68b","appId":"1:442990054938:web:4e7eae26d990bebb950ba3","storageBucket":"clone-fd68b.appspot.com","apiKey":"AIzaSyCn2b8XUn6hQvVTyyiziSeTJRjd0RUw4SM","authDomain":"clone-fd68b.firebaseapp.com","messagingSenderId":"442990054938"}
+[debug] [2022-11-21T09:21:03.565Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b [none]
+[debug] [2022-11-21T09:21:03.979Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b 200
+[debug] [2022-11-21T09:21:03.979Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-fd68b {"projectId":"clone-fd68b","projectNumber":"442990054938","displayName":"amazon-clone","name":"projects/clone-fd68b","resources":{"hostingSite":"clone-fd68b"},"state":"ACTIVE","etag":"1_40f0acd4-35ab-4f41-bce8-fbb3967f76d4"}
+[info] i  hosting[clone-fd68b]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[clone-fd68b]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI is not starting, either because none of the emulated products have an interaction layer in Emulator UI or it cannot determine the Project ID. Pass the --project flag to specify a project. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting, either because none of the emulated products have an interaction layer in Emulator UI or it cannot determine the Project ID. Pass the --project flag to specify a project."}}
+[info] i  functions: Watching "D:\Learn to code\- Projects -\React\Amazon-clone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"D:\\Learn to code\\- Projects -\\React\\Amazon-clone\\functions\" for Cloud Functions..."}}
+[debug] [2022-11-21T09:21:04.006Z] Validating nodejs source
+[debug] [2022-11-21T09:21:06.486Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.15.0",
+    "@stripe/stripe-js": "^1.44.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.3.0",
+    "firebase-functions": "^4.1.0",
+    "stripe": "^11.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2022-11-21T09:21:06.487Z] Building nodejs source
+[debug] [2022-11-21T09:21:06.487Z] Analyzing nodejs backend spec
+[debug] [2022-11-21T09:21:06.488Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-21T09:21:07.125Z] Serving at port 9005
+
+[debug] [2022-11-21T09:21:07.137Z] Got response from /__/functions.yaml Failed to generate manifest from function source: SyntaxError: Cannot use import statement outside a module
+[debug] [2022-11-21T09:21:07.140Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 62:
+     ... rom function source: SyntaxError: Cannot use import statement ou ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: SyntaxError: Cannot use import statement outside a module\n\u0000","position":61,"line":0,"column":61},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 62:\n     ... rom function source: SyntaxError: Cannot use import statement ou ... \n                                         ^"}
+[debug] [2022-11-21T09:21:07.143Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: SyntaxError: Cannot use import statement outside a module {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: SyntaxError: Cannot use import statement outside a module"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┐
+│ Emulator  │ Host:Port      │
+├───────────┼────────────────┤
+│ Functions │ 127.0.0.1:5001 │
+├───────────┼────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │
+└───────────┴────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-11-21T09:26:08.062Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-11-21T09:26:08.063Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-11-21T09:26:08.065Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-11-21T09:26:08.067Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-11-21T09:26:08.068Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-11-21T09:26:08.068Z] [work-queue] {"queueLength":0,"workRunningCount":0}

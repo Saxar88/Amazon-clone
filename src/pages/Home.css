@@ -1,0 +1,24 @@
+.home {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eaeded;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.home--image {
+  width: 100%;
+  z-index: -1;
+  margin-top: 0;
+  mask-image: linear-gradient(to top, transparent 0%, black 25%);
+}
+
+.home--products {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: -365px;
+  z-index: 1;
+}

@@ -1,0 +1,142 @@
+.register {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	color: #111;
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.register--logo {
+	object-fit: contain;
+	width: 100px;
+	margin: 20px auto;
+}
+
+.register--container {
+	height: fit-content;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	border: solid 1px #ddd;
+	border-radius: 5px;
+	padding: 25px;
+}
+
+.register--container > h1 {
+	font-size: 1.75rem;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+
+.register--container > form > h5 {
+	font-size: 0.8rem;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #111;
+	margin-bottom: 5px;
+}
+
+.register--container > form > input {
+	height: 25px;
+	margin-bottom: 10px;
+	width: 98%;
+	border: 1px solid #a6a6a6;
+	border-radius: 3px;
+}
+
+.register--container > form > input:focus {
+	outline: none;
+	border: 1px solid #e77600;
+	box-shadow: 0.1px 0.1px 7px #e77600;
+}
+
+.register--container > p {
+	font-size: 0.75rem;
+	margin-top: 17px;
+	line-height: 1.6;
+}
+
+.register--info {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.register--infoIcon {
+	height: 14px;
+	width: 13px;
+	color: #3a81be;
+}
+
+.register--infoText {
+	font-size: 0.75rem;
+	color: #2b2b2b;
+}
+
+.register--registerButton {
+	background-image: linear-gradient(to bottom, #faecc8, 10%, #f0c24d);
+	height: 30px;
+	width: 100%;
+	padding: 1px 6px;
+	border: solid 1px #846a29;
+	border-radius: 3px;
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+.register--container > p > a,
+.register--smallPrint > p > a {
+	color: #0066c0;
+	text-decoration: none;
+}
+
+.register--container > p > a:hover,
+.register--smallPrint > p > a:hover,
+.register--bottomLinks > a:hover {
+	color: #c45500;
+	text-decoration: underline;
+}
+
+.register--container > hr,
+.register > hr {
+	margin: 30px 0;
+	height: 2px;
+	border: none;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		100% 0,
+		from(transparent),
+		to(transparent),
+		color-stop(50%, #e3e3e3)
+	);
+}
+
+.register--smallPrint {
+	font-size: 0.75rem;
+	line-height: 1.6;
+}
+
+.register--bottomInfo {
+	font-size: 0.7rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.register--bottomLinks {
+	width: 100%;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.register--bottomInfo > p {
+	color: #555;
+	margin: 10px;
+}
+
+.register--bottomLinks > a {
+	color: #0066c0;
+	text-decoration: none;
+	padding: 0 15px;
+}
