@@ -11,10 +11,10 @@ function Product({id, image, title, author, rating, price, coverType}) {
 				id: id,
 				image: image,
 				title: title,
-				author: author,
+				author: author ? author : "N/A",
 				rating: rating,
 				price: price,
-				coverType: coverType,
+				coverType: coverType ? coverType : "N/A",
 			},
 		});
 	};
