@@ -2,39 +2,38 @@ import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import "./ImageSlider.css";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = () => {
+  const slides = [
+    {
+      url: "https://m.media-amazon.com/images/I/615YUOqLN5L._SX3000_.jpg",
+      title: "We deliver",
+    },
+    {
+      url: "https://m.media-amazon.com/images/I/61HHmUkimnL._SX3000_.jpg",
+      title: "Best sellers",
+    },
+    {
+      url: "https://m.media-amazon.com/images/I/71f7FKMnU7L._SX3000_.jpg",
+      title: "Refresh your space",
+    },
+    {
+      url: "https://m.media-amazon.com/images/I/61kT3Ag3PWL._SX3000_.jpg",
+      title: "Discover our beauty picks",
+    },
+    {
+      url: "https://m.media-amazon.com/images/I/61OQs6Tq7cL._SX3000_.jpg",
+      title: "Explore",
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const sliderStyles = { height: "100%", position: "relative" };
-
-  const leftArrowStyles = {
-    position: "absolute",
-    top: "20%",
-    transform: "translate(0,-50%)",
-    left: "25px",
-    fontSize: "45px",
-  };
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
-  };
-
-  const slideStyles = {
-    backgroundImage: `url(${slides[currentIndex].url})`,
-    width: "100%",
-    height: "100%",
-    backgroundSize: "cover",
-  };
-
-  const rightArrowStyles = {
-    position: "absolute",
-    top: "20%",
-    transform: "translate(0,-50%)",
-    right: "25px",
-    fontSize: "45px",
   };
 
   const goToNext = () => {
@@ -44,16 +43,16 @@ const ImageSlider = ({ slides }) => {
   };
 
   return (
-    <div style={sliderStyles}>
+    <div className="imageSlider">
       <FontAwesomeIcon
         icon={faAngleLeft}
-        style={leftArrowStyles}
+        className="imageSlider--leftArrow"
         onClick={goToPrevious}
       />
-      <div style={slideStyles}></div>
+      <img className="imageSlider--slides" src={slides[currentIndex].url}></img>
       <FontAwesomeIcon
         icon={faAngleRight}
-        style={rightArrowStyles}
+        className="imageSlider--rightArrow"
         onClick={goToNext}
       />
     </div>

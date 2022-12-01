@@ -9,10 +9,12 @@
 }
 
 .home--image {
-  width: 100%;
+  width: 93.75vw;
+  height: 72.5vh;
   z-index: -1;
-  margin-top: 0;
+  margin: 0 auto;
   mask-image: linear-gradient(to top, transparent 0%, black 25%);
+  cursor: pointer;
 }
 
 .home--products {
