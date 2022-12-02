@@ -14,6 +14,28 @@ import UserMenu from "./UserMenu";
 
 function Header() {
   const [{ basket, user }] = useStateValue();
+  const linksArr = [
+    "Best Sellers",
+    "Amazon Basics",
+    "Gift Ideas",
+    "Customer Service",
+    "Music",
+    "Today's Deals",
+    "New Releases",
+    "Kindle Books",
+    "Books",
+    "PC & Video Games",
+    "Vouchers",
+    "Gift Cards & Top Up",
+    "Toys & Games",
+    "Electronics",
+    "Fashion",
+    "Home & Garden",
+    "PC",
+  ];
+  const navLinks = linksArr.map((item) => {
+    return <p className="header--menuItem">{item}</p>;
+  });
 
   return (
     <div className="header">
@@ -73,7 +95,8 @@ function Header() {
           <FontAwesomeIcon icon={faBars} className="header--menuIcon" />
           <p>All</p>
         </div>
-        <p className="header--menuItem">Best Sellers</p>
+        {navLinks}
+        {/* <p className="header--menuItem">Best Sellers</p>
         <p className="header--menuItem">Amazon Basics</p>
         <p className="header--menuItem">Gift Ideas</p>
         <p className="header--menuItem">Customer Service</p>
@@ -89,7 +112,7 @@ function Header() {
         <p className="header--menuItem">Electronics</p>
         <p className="header--menuItem">Fashion</p>
         <p className="header--menuItem">Home & Garden</p>
-        <p className="header--menuItem">PC</p>
+        <p className="header--menuItem">PC</p> */}
       </div>
     </div>
   );

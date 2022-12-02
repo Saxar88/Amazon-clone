@@ -40,6 +40,16 @@ function SearchMenu() {
           <li>CDs & Vinyl</li>
           <li>Classical Music</li>
           <li>Computers & Accessories</li>
+          <li>Digital Music</li>
+          <li>DVD & Blu-ray</li>
+          <li>Electronics & Photo</li>
+          <li>Fashion</li>
+          <li>&nbsp;&nbsp;Women</li>
+          <li>&nbsp;&nbsp;Men</li>
+          <li>&nbsp;&nbsp;Girls</li>
+          <li>&nbsp;&nbsp;Boys</li>
+          <li>&nbsp;&nbsp;Baby</li>
+          <li>Garden & Outdoors</li>
         </ul>
       )}
     </div>
