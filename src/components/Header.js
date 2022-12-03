@@ -14,28 +14,6 @@ import UserMenu from "./UserMenu";
 
 function Header() {
   const [{ basket, user }] = useStateValue();
-  const linksArr = [
-    "Best Sellers",
-    "Amazon Basics",
-    "Gift Ideas",
-    "Customer Service",
-    "Music",
-    "Today's Deals",
-    "New Releases",
-    "Kindle Books",
-    "Books",
-    "PC & Video Games",
-    "Vouchers",
-    "Gift Cards & Top Up",
-    "Toys & Games",
-    "Electronics",
-    "Fashion",
-    "Home & Garden",
-    "PC",
-  ];
-  const navLinks = linksArr.map((item) => {
-    return <p className="header--menuItem">{item}</p>;
-  });
 
   return (
     <div className="header">
@@ -95,24 +73,23 @@ function Header() {
           <FontAwesomeIcon icon={faBars} className="header--menuIcon" />
           <p>All</p>
         </div>
-        {navLinks}
-        {/* <p className="header--menuItem">Best Sellers</p>
+        <p className="header--menuItem">Best Sellers</p>
         <p className="header--menuItem">Amazon Basics</p>
         <p className="header--menuItem">Gift Ideas</p>
-        <p className="header--menuItem">Customer Service</p>
-        <p className="header--menuItem">Music</p>
-        <p className="header--menuItem">Today's Deals</p>
-        <p className="header--menuItem">New Releases</p>
-        <p className="header--menuItem">Kindle Books</p>
-        <p className="header--menuItem">Books</p>
-        <p className="header--menuItem">PC & Video Games</p>
-        <p className="header--menuItem">Vouchers</p>
-        <p className="header--menuItem">Gift Cards & Top Up</p>
-        <p className="header--menuItem">Toys & Games</p>
-        <p className="header--menuItem">Electronics</p>
-        <p className="header--menuItem">Fashion</p>
-        <p className="header--menuItem">Home & Garden</p>
-        <p className="header--menuItem">PC</p> */}
+        <p className="header--menuItem mediumScreens">Customer Service</p>
+        <p className="header--menuItem mediumScreens">Music</p>
+        <p className="header--menuItem mediumScreens">Today's Deals</p>
+        <p className="header--menuItem mediumScreens">New Releases</p>
+        <p className="header--menuItem mediumScreens">Kindle Books</p>
+        <p className="header--menuItem mediumScreens">Books</p>
+        <p className="header--menuItem largeScreens">PC & Video Games</p>
+        <p className="header--menuItem largeScreens">Vouchers</p>
+        <p className="header--menuItem largeScreens">Gift Cards & Top Up</p>
+        <p className="header--menuItem largeScreens">Toys & Games</p>
+        <p className="header--menuItem largeScreens">Electronics</p>
+        <p className="header--menuItem largeScreens">Fashion</p>
+        <p className="header--menuItem extraLargeScreens">Home & Garden</p>
+        <p className="header--menuItem extraLargeScreens">PC</p>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 .header {
-  width: 100vw;
+  position: relative;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 100;
 }
 
 .top-nav {
@@ -10,7 +12,6 @@
   background-color: #131921;
   position: sticky;
   top: 0;
-  z-index: 100;
 }
 
 .header--logo {
@@ -32,7 +33,7 @@
   display: flex;
   white-space: nowrap;
   color: #fff;
-  padding: 0px 9px;
+  padding: 10px 7px;
   margin: 5px 2px 5px 0;
   cursor: pointer;
 }
@@ -119,7 +120,7 @@
   align-items: center;
   color: #fff;
   padding: 0.25rem;
-  margin: 0.25rem 2rem 0.5rem 0.25rem;
+  margin: 5px 20px 10px 5px;
   cursor: pointer;
 }
 
@@ -129,7 +130,7 @@
 }
 
 .header--basketCount {
-  margin: 0 10px;
+  margin: 0 0.625rem;
   color: #f08804;
 }
 
@@ -143,14 +144,13 @@
 }
 
 .bottom-nav {
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: left;
-  height: 23px;
+  height: 1.5rem;
   background-color: #232f3e;
   color: #fff;
-  padding: 8px;
+  padding: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
@@ -184,4 +184,28 @@
 .header--menuItem:hover {
   border: 1px solid #fff;
   margin: 4px -1px 5px;
+}
+
+.mediumScreens,
+.largeScreens,
+.extraLargeScreens {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mediumScreens {
+    display: inline-flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .largeScreens {
+    display: inline-flex;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .extralargeScreens {
+    display: inline-flex;
+  }
 }

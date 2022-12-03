@@ -223,9 +223,10 @@ function Pay() {
             </button>
             {error && <div>{error}</div>}
             <p>
-              By placing your order you agree to Amazon's Conditions of Use &
-              Sale. Please see our Privacy Notice, our Cookies Notice and our
-              Interest-Based Ads Notice.
+              By placing your order you agree to Amazon's{" "}
+              <a>Conditions of Use & Sale</a>. Please see our{" "}
+              <a>Privacy Notice</a>, our <a>Cookies Notice</a> and our
+              <a>Interest-Based Ads Notice</a>.
             </p>
             <p>You also agree to Amazon Global's terms and conditions.</p>
             <hr />
