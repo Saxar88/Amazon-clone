@@ -1,60 +1,63 @@
 .search--menu {
-	position: relative;
+  position: relative;
 }
 
 .search--menu > button {
-	height: 38px;
-	width: 52px;
-	font-size: 12px;
-	color: #666666;
-	background-color: #f3f3f3;
-	padding: 0 0 0 5px;
-	margin-left: 10px;
-	margin-right: 0;
-	border: none;
-	border-right: 1px solid #cdcdcd;
-	border-radius: 5px 0 0 5px;
-	cursor: pointer;
+  height: 2.375rem;
+  width: 3.25rem;
+  font-size: 0.75rem;
+  color: #666666;
+  background-color: #f3f3f3;
+  padding: 0 0 0 5px;
+  margin-left: 10px;
+  margin-right: 0;
+  border: none;
+  border-right: 1px solid #cdcdcd;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
 }
 
 .search--menu > button:focus {
-	color: #383b38;
-	outline: 3px solid #f08804;
+  background-color: #d7d7d7;
+  color: #383b38;
+  outline: 3px solid #f08804;
 }
 
 .search--menuCaret {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
 .search--menuList {
-	position: absolute;
-	list-style-type: none;
-	width: 200px;
-	margin: 32px 0 10px -50px;
-	padding: 0;
-	border: 1px solid grey;
-	cursor: pointer;
+  position: absolute;
+  width: 15rem;
+  height: 25rem;
+  background-color: #fff;
+  list-style-type: none;
+  margin: 32px 0 10px -50px;
+  padding: 0;
+  border: 1px solid grey;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  cursor: pointer;
 }
 
 .search--menuList > ul {
-	height: 300px;
-	border: 1px solid;
+  border: 1px solid;
 }
 
 .search--menuList > li {
-	font: inherit;
-	color: inherit;
-	background-color: #fff;
-	width: 100%;
-	height: 100%;
-	text-align: left;
-	border: none;
-	padding: 5px;
-	margin: 0;
-	cursor: pointer;
+  width: 100%;
+  font-size: 0.875rem;
+  color: inherit;
+  text-align: left;
+  border: none;
+  padding: 2px 5px;
+  margin: 0;
+  cursor: pointer;
 }
 
 .search--menuList > li:hover {
-	color: #fff;
-	background-color: #1e90ff;
+  color: #fff;
+  background-color: #1e90ff;
+  text-decoration: none;
 }

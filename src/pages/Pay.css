@@ -1,6 +1,7 @@
 .pay {
-	font-family: Arial, Helvetica, sans-serif;
+	width: 100vw;
 	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
 	padding: 14px 18px 18px;
 	display: flex;
 	flex-direction: column;
@@ -8,7 +9,7 @@
 
 .pay--header {
 	width: 95vw;
-	height: 60px;
+	height: 3.75rem;
 	background-image: linear-gradient(to bottom, #fff, #f8f8f8);
 	color: #0f1111;
 	display: flex;
@@ -20,26 +21,26 @@
 }
 
 .pay--header > h1 {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 500;
 	margin: 0 23px 0 0;
 	padding: 0 14px 0 0;
 }
 
 .pay--logo {
-	width: 120px;
+	width: 7.5rem;
 }
 
 .pay--header > h1 > a {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 500;
 	color: #007185;
 	text-decoration: none;
 }
 
 .pay--headerLock {
-	height: 21px;
-	width: 16px;
+	height: 1.3rem;
+	width: 1rem;
 	color: #999;
 }
 
@@ -47,24 +48,24 @@
 	display: flex;
 	justify-content: center;
 	padding: 14px 18px 18px;
-	gap: 1rem;
+	gap: 2rem;
 }
 
 .pay--leftMenu {
-	width: 45%;
+	width: 80%;
 }
 
 .pay--steps {
 	width: 100%;
 	display: grid;
-	grid-template-columns: [first] 10px [line2] 150px [line3] auto [line4] 50px [end];
+	grid-template-columns: [first] 0.625rem [line2] 9rem [line3] auto [line4] 3rem [end];
 	gap: 2rem;
 	padding: 15px 5px 5px 0;
 	border-top: 1px solid #e7e7e7;
 }
 
 .pay--stepsNumber {
-	padding-right: 25px;
+	padding-right: 1.5rem;
 }
 
 .pay--steps > h3 {
@@ -75,11 +76,11 @@
 .pay--steps > ul {
 	width: 55%;
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .pay--steps > form {
-	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .pay--stepsChange {
@@ -87,7 +88,7 @@
 }
 
 .pay--steps > a {
-	font-size: 14px;
+	font-size: 0.875rem;
 	color: #007185;
 	text-decoration: none;
 }
@@ -95,10 +96,6 @@
 .pay--steps > a:hover {
 	color: #c7511f;
 	text-decoration: underline;
-}
-
-.pay--stepsProducts {
-	width: 100%;
 }
 
 .pay--total {
@@ -114,10 +111,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 88px;
-	height: 34px;
+	width: 7rem;
+	height: 2.125rem;
 	background-color: #ffd814;
-	margin-right: 20px;
+	margin-right: 1.25rem;
 	padding: 1px 6px;
 	border: none;
 	border-radius: 10px;
@@ -138,17 +135,33 @@
 
 .pay--totalInfo > p,
 .pay--info > p {
-	font-size: 12px;
+	font-size: 0.75rem;
 	color: #565959;
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
+}
+
+.pay--info {
+	margin-top: 1.5rem;
+}
+
+a {
+	font-size: 0.75rem;
+	color: #007185;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover {
+	color: #d2511f;
+	text-decoration: underline;
 }
 
 .pay--rightMenu {
+	display: none;
 	color: #0f1111;
-	width: 250px;
+	width: 15.625rem;
 	border: 1px solid #d5d9d9;
 	border-radius: 10px;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 14px 18px;
@@ -160,8 +173,8 @@
 }
 
 .pay--buttonInfo > button {
-	width: 250px;
-	height: 32px;
+	width: 15.625rem;
+	height: 2rem;
 	background-color: #ffd814;
 	margin: 10px auto;
 	padding: 5px 20px;
@@ -172,7 +185,7 @@
 }
 
 .pay--buttonInfo > p {
-	font-size: 12px;
+	font-size: 0.75rem;
 	color: #565959;
 	text-align: center;
 	margin-bottom: 10px;
@@ -190,10 +203,20 @@
 }
 
 .pay--summary > p {
-	font-size: 12px;
+	font-size: 0.75rem;
 	text-align: left;
 }
 
 .orderTotal {
 	color: #b12704;
+}
+
+@media screen and (min-width: 1024px) {
+	.pay--rightMenu {
+		display: flex;
+	}
+
+	.pay--leftMenu {
+		width: 45%;
+	}
 }

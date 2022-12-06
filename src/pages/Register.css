@@ -25,13 +25,13 @@
 }
 
 .register--container > h1 {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 400;
 	margin-bottom: 10px;
 }
 
 .register--container > form > h5 {
-	font-size: 13px;
+	font-size: 0.8rem;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #111;
 	margin-bottom: 5px;
@@ -52,7 +52,7 @@
 }
 
 .register--container > p {
-	font-size: 12px;
+	font-size: 0.75rem;
 	margin-top: 17px;
 	line-height: 1.6;
 }
@@ -69,7 +69,7 @@
 }
 
 .register--infoText {
-	font-size: 12px;
+	font-size: 0.75rem;
 	color: #2b2b2b;
 }
 
@@ -113,12 +113,12 @@
 }
 
 .register--smallPrint {
-	font-size: 12px;
+	font-size: 0.75rem;
 	line-height: 1.6;
 }
 
 .register--bottomInfo {
-	font-size: 11px;
+	font-size: 0.7rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

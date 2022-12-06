@@ -4,10 +4,11 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: [
-    "eslint:recommended",
-    "google",
-  ],
+  parserOptions: {
+    ecmaVersion: 8,
+    sourceType: "module",
+  },
+  extends: ["eslint:recommended", "google"],
   rules: {
     quotes: ["error", "double"],
   },

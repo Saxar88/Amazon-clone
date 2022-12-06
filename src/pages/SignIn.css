@@ -25,13 +25,13 @@
 }
 
 .singIn--container > h1 {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 400;
 	margin-bottom: 10px;
 }
 
 .singIn--container > form > h5 {
-	font-size: 13px;
+	font-size: 0.8rem;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #111;
 	margin-bottom: 5px;
@@ -52,7 +52,7 @@
 }
 
 .singIn--container > p {
-	font-size: 12px;
+	font-size: 0.75rem;
 	margin-top: 17px;
 	line-height: 1.6;
 }
@@ -85,11 +85,11 @@
 
 .signIn--register > p {
 	width: 100%;
-	font-size: 12px;
+	font-size: 0.75rem;
 	color: #767676;
 	text-align: center;
 	border-bottom: 1px solid #e7e7e7;
-	line-height: 0.1em;
+	line-height: 0.1rem;
 	margin: 10px 0 20px;
 }
 

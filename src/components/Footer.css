@@ -3,7 +3,7 @@
 	color: #ddd;
 	background-color: #232f3e;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 0.875rem;
 	display: flex;
 	justify-content: center;
 	margin-top: 30px;
@@ -22,7 +22,7 @@ ul {
 
 h5 {
 	color: #fff;
-	font-size: 16px;
+	font-size: 1rem;
 	margin: 6px 0 14px;
 }
 

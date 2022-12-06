@@ -29,9 +29,11 @@ function Checkout() {
 												Sign in to your account
 											</button>
 										</Link>
-										<button className="emptyBasket--registerButton">
-											Sign up now
-										</button>
+										<Link to="/register">
+											<button className="emptyBasket--registerButton">
+												Sign up now
+											</button>
+										</Link>
 									</span>
 								) : (
 									<div />
