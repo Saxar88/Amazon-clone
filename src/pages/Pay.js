@@ -48,7 +48,7 @@ function Pay() {
 				payment_method: {card: elements.getElement(CardElement)},
 			})
 			.then(({paymentIntent}) => {
-				setDoc(doc(db, "users", user.uid), {
+				setDoc(doc(db, "users", user.uid, "orders", paymentIntent.id), {
 					basket: basket,
 					amount: paymentIntent.amount,
 					created: paymentIntent.created,
