@@ -10,6 +10,7 @@
 
 .home--image {
 	height: 72.5vh;
+	object-fit: cover;
 	z-index: -1;
 	margin: 0 auto;
 	cursor: pointer;

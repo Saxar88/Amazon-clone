@@ -48,8 +48,9 @@ function Checkout() {
 							Deselect all items
 						</Link>
 						<p className="checkout--price">Price</p>
-						{basket.map((item) => (
+						{basket.map((item, i) => (
 							<CheckoutProduct
+								key={i}
 								id={item.id}
 								image={item.image}
 								title={item.title}
