@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect } from 'react';
 
 export function useOnHoverOutside(ref, handler) {
 	useEffect(() => {
@@ -8,9 +8,9 @@ export function useOnHoverOutside(ref, handler) {
 			}
 			handler(event);
 		};
-		document.addEventListener("mouseover", listener);
+		document.addEventListener('mouseover', listener);
 		return () => {
-			document.removeEventListener("mouseout", listener);
+			document.removeEventListener('mouseout', listener);
 		};
 	}, [ref, handler]);
 }

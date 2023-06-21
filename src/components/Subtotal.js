@@ -1,36 +1,36 @@
-import React from "react";
-import "./Subtotal.css";
-import CurrencyFormat from "react-currency-format";
-import {useNavigate} from "react-router-dom";
-import {useStateValue} from "../hooks/StateProvider";
-import {getBasketTotal} from "../hooks/reducer";
+import React from 'react';
+import './Subtotal.css';
+import CurrencyFormat from 'react-currency-format';
+import { useNavigate } from 'react-router-dom';
+import { useStateValue } from '../hooks/StateProvider';
+import { getBasketTotal } from '../hooks/reducer';
 
 function Subtotal() {
 	const navigate = useNavigate();
-	const [{basket, user}] = useStateValue();
+	const [{ basket, user }] = useStateValue();
 
 	return (
-		<div className="subtotal">
+		<div className='subtotal'>
 			<CurrencyFormat
 				renderText={(value) => (
 					<>
 						<p>
 							Subtotal ({basket.length} items): <strong>{value}</strong>
 						</p>
-						<div className="subtotal--gift">
-							<input type="checkbox" /> <p>This order contains a gift</p>
+						<div className='subtotal--gift'>
+							<input type='checkbox' /> <p>This order contains a gift</p>
 						</div>
 					</>
 				)}
 				decimalScale={2}
 				value={getBasketTotal(basket)}
-				displayType={"text"}
+				displayType={'text'}
 				thousandSeparator={true}
-				prefix={"€"}
+				prefix={'€'}
 			/>
 			<button
 				onClick={(e) => {
-					user ? navigate("/pay") : navigate("/signin");
+					user ? navigate('/pay') : navigate('/signin');
 				}}>
 				Proceed to Checkout
 			</button>

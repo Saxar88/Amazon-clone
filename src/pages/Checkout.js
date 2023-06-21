@@ -1,36 +1,36 @@
-import React from "react";
-import "./Checkout.css";
-import {Link} from "react-router-dom";
-import {useStateValue} from "../hooks/StateProvider";
-import CheckoutProduct from "../components/CheckoutProduct";
-import Subtotal from "../components/Subtotal";
+import React from 'react';
+import './Checkout.css';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../hooks/StateProvider';
+import CheckoutProduct from '../components/CheckoutProduct';
+import Subtotal from '../components/Subtotal';
 
 function Checkout() {
-	const [{basket, user}, dispatch] = useStateValue();
+	const [{ basket, user }, dispatch] = useStateValue();
 
 	return (
-		<div className="checkout">
-			<div className="checkout--leftMenu">
+		<div className='checkout'>
+			<div className='checkout--leftMenu'>
 				{basket.length === 0 ? (
-					<div className="emptyBasket">
-						<div className="emptyBasket--container">
+					<div className='emptyBasket'>
+						<div className='emptyBasket--container'>
 							<img
-								className="emptyBasket--image"
-								src="images/empty-basket.svg"
-								alt=""
+								className='emptyBasket--image'
+								src='images/empty-basket.svg'
+								alt=''
 							/>
-							<div className="emptyBasket--menu">
+							<div className='emptyBasket--menu'>
 								<h2>Your Amazon Cart is empty</h2>
-								<a href="">Shop today's deals</a>
+								<a href=''>Shop today's deals</a>
 								{!user ? (
 									<span>
-										<Link to="/signin">
-											<button className="emptyBasket--signInButton">
+										<Link to='/signin'>
+											<button className='emptyBasket--signInButton'>
 												Sign in to your account
 											</button>
 										</Link>
-										<Link to="/register">
-											<button className="emptyBasket--registerButton">
+										<Link to='/register'>
+											<button className='emptyBasket--registerButton'>
 												Sign up now
 											</button>
 										</Link>
@@ -42,12 +42,12 @@ function Checkout() {
 						</div>
 					</div>
 				) : (
-					<div className="shoppingBasket">
-						<p className="checkout--title">Shopping Basket</p>
-						<Link to="/checkout#" className="checkout--deselect">
+					<div className='shoppingBasket'>
+						<p className='checkout--title'>Shopping Basket</p>
+						<Link to='/checkout#' className='checkout--deselect'>
 							Deselect all items
 						</Link>
-						<p className="checkout--price">Price</p>
+						<p className='checkout--price'>Price</p>
 						{basket.map((item, i) => (
 							<CheckoutProduct
 								key={i}
@@ -71,7 +71,7 @@ function Checkout() {
 					your claim code when it's time to pay.
 				</p>
 			</div>
-			<div className="checkout--rightMenu">
+			<div className='checkout--rightMenu'>
 				{basket.length === 0 ? (
 					<div />
 				) : (

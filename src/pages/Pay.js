@@ -1,25 +1,25 @@
-import React, {useEffect, useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faLock} from "@fortawesome/free-solid-svg-icons";
-import {Link, useNavigate} from "react-router-dom";
-import {CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
-import {doc, setDoc} from "firebase/firestore";
-import "./Pay.css";
-import {useStateValue} from "../hooks/StateProvider";
-import CheckoutProduct from "../components/CheckoutProduct";
-import CurrencyFormat from "react-currency-format";
-import {getBasketTotal} from "../hooks/reducer";
-import axios from "../hooks/axios";
-import {db} from "../hooks/firebase";
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { Link, useNavigate } from 'react-router-dom';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { doc, setDoc } from 'firebase/firestore';
+import './Pay.css';
+import { useStateValue } from '../hooks/StateProvider';
+import CheckoutProduct from '../components/CheckoutProduct';
+import CurrencyFormat from 'react-currency-format';
+import { getBasketTotal } from '../hooks/reducer';
+import axios from '../hooks/axios';
+import { db } from '../hooks/firebase';
 
 function Pay() {
-	const [{basket, user}, dispatch] = useStateValue();
+	const [{ basket, user }, dispatch] = useStateValue();
 
 	const stripe = useStripe();
 	const elements = useElements();
 	const navigate = useNavigate();
 
-	const [processing, setProcessing] = useState("");
+	const [processing, setProcessing] = useState('');
 	const [succeeded, setSucceeded] = useState(false);
 	const [error, setError] = useState(null);
 	const [disabled, setDisabled] = useState(true);
@@ -29,7 +29,7 @@ function Pay() {
 	useEffect(() => {
 		const getClientSecret = async () => {
 			const response = await axios({
-				method: "post",
+				method: 'post',
 				url: `/pay/create?total=${getBasketTotal(basket) * 100}`,
 			});
 
@@ -45,10 +45,10 @@ function Pay() {
 
 		const payload = await stripe
 			.confirmCardPayment(clientSecret, {
-				payment_method: {card: elements.getElement(CardElement)},
+				payment_method: { card: elements.getElement(CardElement) },
 			})
-			.then(({paymentIntent}) => {
-				setDoc(doc(db, "users", user.uid, "orders", paymentIntent.id), {
+			.then(({ paymentIntent }) => {
+				setDoc(doc(db, 'users', user.uid, 'orders', paymentIntent.id), {
 					basket: basket,
 					amount: paymentIntent.amount,
 					created: paymentIntent.created,
@@ -59,64 +59,64 @@ function Pay() {
 				setProcessing(false);
 
 				dispatch({
-					type: "EMPTY_BASKET",
+					type: 'EMPTY_BASKET',
 				});
 
-				navigate("/order-history", {replace: true});
+				navigate('/order-history', { replace: true });
 			});
 	};
 
 	const handleChange = (event) => {
 		setDisabled(event.empty);
-		setError(event.error ? event.error.message : "");
+		setError(event.error ? event.error.message : '');
 	};
 
 	return (
-		<div className="pay">
-			<div className="pay--header">
-				<Link to="/">
-					<img className="pay--logo" src="images/logo-b.png" alt="logo" />
+		<div className='pay'>
+			<div className='pay--header'>
+				<Link to='/'>
+					<img className='pay--logo' src='images/logo-b.png' alt='logo' />
 				</Link>
 				<h1>
-					Checkout{" "}
-					<Link to="/checkout">
-						(<a href="">{basket.length} items</a>)
+					Checkout{' '}
+					<Link to='/checkout'>
+						(<a href=''>{basket.length} items</a>)
 					</Link>
 				</h1>
-				<FontAwesomeIcon icon={faLock} className="pay--headerLock" />
+				<FontAwesomeIcon icon={faLock} className='pay--headerLock' />
 			</div>
-			<div className="pay--container">
-				<div className="pay--leftMenu">
-					<div className="pay--steps">
-						<h3 className="pay--stepsNumber">1</h3>
+			<div className='pay--container'>
+				<div className='pay--leftMenu'>
+					<div className='pay--steps'>
+						<h3 className='pay--stepsNumber'>1</h3>
 						<h3>Delivery address</h3>
 						<ul>
 							<li>Full name</li>
 							<li>Adress</li>
 							<li>City</li>
 						</ul>
-						<a href="" className="pay--stepsChange">
+						<a href='' className='pay--stepsChange'>
 							Change
 						</a>
 					</div>
-					<div className="pay--steps">
-						<h3 className="pay--stepsNumber">2</h3>
+					<div className='pay--steps'>
+						<h3 className='pay--stepsNumber'>2</h3>
 						<h3>Payment method</h3>
-						<form id="cardInfo" onSubmit={handleSubmit}>
+						<form id='cardInfo' onSubmit={handleSubmit}>
 							<CardElement onChange={handleChange} />
 						</form>
-						<a href="" className="pay--stepsChange">
+						<a href='' className='pay--stepsChange'>
 							Change
 						</a>
 					</div>
-					<div className="pay--steps">
-						<h3 className="pay--stepsNumber">3</h3>
+					<div className='pay--steps'>
+						<h3 className='pay--stepsNumber'>3</h3>
 						<h3>Offers</h3>
 					</div>
-					<div className="pay--steps">
-						<h3 className="pay--stepsNumber">4</h3>
+					<div className='pay--steps'>
+						<h3 className='pay--stepsNumber'>4</h3>
 						<h3>Review items and delivery</h3>
-						<div className="pay--product">
+						<div className='pay--product'>
 							{basket.map((item) => (
 								<CheckoutProduct
 									id={item.id}
@@ -129,18 +129,18 @@ function Pay() {
 							))}
 						</div>
 					</div>
-					<div className="pay--total">
+					<div className='pay--total'>
 						<div>
 							<button
-								type="submit"
-								form="cardInfo"
+								type='submit'
+								form='cardInfo'
 								disabled={processing || disabled || succeeded}
-								className="pay--totalButton">
-								<span>{processing ? <p>Processing...</p> : "Pay in EUR"}</span>
+								className='pay--totalButton'>
+								<span>{processing ? <p>Processing...</p> : 'Pay in EUR'}</span>
 							</button>
 							{error && <div>{error}</div>}
 						</div>
-						<div className="pay--totalInfo">
+						<div className='pay--totalInfo'>
 							<CurrencyFormat
 								renderText={(value) => (
 									<>
@@ -149,9 +149,9 @@ function Pay() {
 								)}
 								decimalScale={2}
 								value={getBasketTotal(basket)}
-								displayType={"text"}
+								displayType={'text'}
 								thousandSeparator={true}
-								prefix={"€"}
+								prefix={'€'}
 							/>
 							<p>
 								By placing your order you agree to Amazon's Conditions of Use &
@@ -161,7 +161,7 @@ function Pay() {
 							<p>You also agree to Amazon Global's terms and conditions.</p>
 						</div>
 					</div>
-					<div className="pay--info">
+					<div className='pay--info'>
 						<p>Need help? Check our Help pages or contact us</p>
 						<p>
 							When you click the "Buy now" button, we'll send you an e-mail
@@ -211,34 +211,34 @@ function Pay() {
 						</p>
 					</div>
 				</div>
-				<div className="pay--rightMenu">
-					<div className="pay--buttonInfo">
+				<div className='pay--rightMenu'>
+					<div className='pay--buttonInfo'>
 						<button
-							type="submit"
-							form="cardInfo"
+							type='submit'
+							form='cardInfo'
 							disabled={processing || disabled || succeeded}>
-							<span>{processing ? <p>Processing...</p> : "Pay in EUR"}</span>
+							<span>{processing ? <p>Processing...</p> : 'Pay in EUR'}</span>
 						</button>
 						{error && <div>{error}</div>}
 						<p>
-							By placing your order you agree to Amazon's{" "}
-							<a>Conditions of Use & Sale</a>. Please see our{" "}
+							By placing your order you agree to Amazon's{' '}
+							<a>Conditions of Use & Sale</a>. Please see our{' '}
 							<a>Privacy Notice</a>, our <a>Cookies Notice</a> and our
 							<a>Interest-Based Ads Notice</a>.
 						</p>
 						<p>You also agree to Amazon Global's terms and conditions.</p>
 						<hr />
 					</div>
-					<div className="pay--summary">
+					<div className='pay--summary'>
 						<CurrencyFormat
 							renderText={(value) => (
-								<h3 className="orderTotal">Order Total: {value}</h3>
+								<h3 className='orderTotal'>Order Total: {value}</h3>
 							)}
 							decimalScale={2}
 							value={getBasketTotal(basket)}
-							displayType={"text"}
+							displayType={'text'}
 							thousandSeparator={true}
-							prefix={"€"}
+							prefix={'€'}
 						/>
 					</div>
 				</div>

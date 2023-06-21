@@ -1,10 +1,10 @@
-import React from "react";
-import "./Footer.css";
+import React from 'react';
+import './Footer.css';
 
 function Footer() {
 	return (
-		<div className="footer">
-			<div className="footer--list getToKnowUs">
+		<div className='footer'>
+			<div className='footer--list getToKnowUs'>
 				<h5>Get to Know Us</h5>
 				<ul>
 					<li>Careers</li>
@@ -15,7 +15,7 @@ function Footer() {
 					<li>Amazon Science</li>
 				</ul>
 			</div>
-			<div className="footer--list makeMoneyWithUs">
+			<div className='footer--list makeMoneyWithUs'>
 				<h5>Make Money with Us</h5>
 				<ul>
 					<li>Sell on Amazon</li>
@@ -29,7 +29,7 @@ function Footer() {
 					<li>Amazon Pay</li>
 				</ul>
 			</div>
-			<div className="footer--list">
+			<div className='footer--list'>
 				<h5>Amazon Payment Methods</h5>
 				<ul>
 					<li>Amazon Visa Card</li>
@@ -42,7 +42,7 @@ function Footer() {
 					<li>Top Up Your Account</li>
 				</ul>
 			</div>
-			<div className="footer--list">
+			<div className='footer--list'>
 				<h5>Let Us Help You</h5>
 				<ul>
 					<li>Track Packages or View Orders</li>
