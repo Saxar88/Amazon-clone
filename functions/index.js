@@ -1,29 +1,28 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const stripe = require("stripe")(
-	// eslint-disable-next-line max-len
-	"sk_test_51M4M7eGnbbBlpIzDz6CCBHvGxoKPT7F2QINX4zQotEC7LpI5DUTHMRF0jVk4cc4xFQyrbO8VYQOuFz3F4IC8XFM400CR1vg4b4"
-);
+// eslint-disable-next-line max-len
+const stripe = require("stripe")("sk_test_51M4M7eGnbbBlpIzDz6CCBHvGxoKPT7F2QINX4zQotEC7LpI5DUTHMRF0jVk4cc4xFQyrbO8VYQOuFz3F4IC8XFM400CR1vg4b4");
 
-const app = require("express")();
+const app = express();
 
 app.use(cors({origin: true}));
 app.use(express.json());
 
-app.get("/", (request, response) => response.status(200).send("it works!"));
+app.get("/", (req, res) => res.status(200).send("It works!"));
 
-app.post("/pay/create", async (request, response) => {
-	const total = request.query.total;
+app.post("/pay/create", async (req, res) => {
+  const total = req.query.total;
 
-	const paymentIntent = await stripe.paymentIntents.create({
-		amount: total,
-		currency: "eur",
-	});
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: total,
+    currency: "eur",
+    automatic_payment_methods: {enabled: true},
+  });
 
-	response.status(201).send({
-		clientSecret: paymentIntent.client_secret,
-	});
+  res.status(201).send({
+    clientSecret: paymentIntent.client_secret,
+  });
 });
 
 exports.api = functions.https.onRequest(app);

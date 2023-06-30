@@ -22,6 +22,7 @@ function OrderHistory() {
 					}))
 				);
 			});
+			console.log(colRef);
 		} else {
 			setOrders([]);
 		}
@@ -32,7 +33,7 @@ function OrderHistory() {
 			<h1>Your Orders</h1>
 			<div className='orderHistory--order'>
 				{orders.map((order) => (
-					<Order order={order} />
+					<Order key={order.id} order={order} />
 				))}
 			</div>
 		</div>

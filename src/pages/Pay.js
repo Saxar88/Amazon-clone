@@ -119,6 +119,7 @@ function Pay() {
 						<div className='pay--product'>
 							{basket.map((item) => (
 								<CheckoutProduct
+									key={item.id}
 									id={item.id}
 									image={item.image}
 									title={item.title}
